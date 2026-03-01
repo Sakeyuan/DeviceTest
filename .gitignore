@@ -81,7 +81,5 @@ CMakeLists.txt.user*
 .uic/
 /build*/
 /build/
-*_autogen/
-CMakeFiles/
-.cmake/
 .vscode/
+.qtcreator/
