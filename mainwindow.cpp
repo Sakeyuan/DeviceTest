@@ -33,7 +33,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::initializeComponent()
 {
-    ui->splitter->setStretchFactor(0, 1);
+    ui->splitter->setStretchFactor(0, 2);
     ui->splitter->setStretchFactor(1, 9);
 }
 
