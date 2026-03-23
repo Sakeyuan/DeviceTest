@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>915</width>
-    <height>736</height>
+    <width>1184</width>
+    <height>881</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -20,7 +20,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
      <widget class="QSplitter" name="splitter">
       <property name="sizePolicy">
@@ -101,22 +101,285 @@ background-color: rgb(255, 255, 255);</string>
          <number>0</number>
         </property>
         <item>
-         <widget class="QTabWidget" name="tabWidget">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(122, 117, 115);</string>
-          </property>
+         <widget class="QStackedWidget" name="stackedWidget">
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
-          <widget class="QWidget" name="tab">
-           <attribute name="title">
-            <string>Tab 1</string>
-           </attribute>
+          <widget class="QWidget" name="page_0">
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QWidget" name="widget" native="true"/>
+            </item>
+           </layout>
           </widget>
-          <widget class="QWidget" name="tab_2">
-           <attribute name="title">
-            <string>Tab 2</string>
-           </attribute>
+          <widget class="QWidget" name="page_1">
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QTabWidget" name="tabWidget_2">
+              <widget class="QWidget" name="tab_3">
+               <attribute name="title">
+                <string>Tab 1</string>
+               </attribute>
+              </widget>
+              <widget class="QWidget" name="tab_4">
+               <attribute name="title">
+                <string>Tab 2</string>
+               </attribute>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_2">
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <widget class="QTabWidget" name="tabWidget_4">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="tab_7">
+               <attribute name="title">
+                <string>装置数据</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_10">
+                <item>
+                 <widget class="QSplitter" name="splitter_2">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>1</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                  <widget class="QTableWidget" name="deviceWidget">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="contextMenuPolicy">
+                    <enum>Qt::ContextMenuPolicy::CustomContextMenu</enum>
+                   </property>
+                   <row>
+                    <property name="text">
+                     <string>新建行1</string>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string>新建行2</string>
+                    </property>
+                   </row>
+                   <column>
+                    <property name="text">
+                     <string>编号</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>装置名称</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>连接状态</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>描述</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>A网IP</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>B网IP</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>电压额定值</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>电流额定值</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>功率额定值</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>电压变比</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>电流变比</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>功率变比</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>电压系数</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>电流系数</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>功率系数</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>最大电压</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>最大电流</string>
+                    </property>
+                   </column>
+                  </widget>
+                  <widget class="QTabWidget" name="tabWidget_signal">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>1</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="currentIndex">
+                    <number>5</number>
+                   </property>
+                   <widget class="QWidget" name="tab_yx">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <attribute name="title">
+                     <string>遥信</string>
+                    </attribute>
+                   </widget>
+                   <widget class="QWidget" name="tab_yc">
+                    <attribute name="title">
+                     <string>遥测</string>
+                    </attribute>
+                   </widget>
+                   <widget class="QWidget" name="tab_yk">
+                    <attribute name="title">
+                     <string>遥控</string>
+                    </attribute>
+                   </widget>
+                   <widget class="QWidget" name="tab_dz">
+                    <attribute name="title">
+                     <string>定值</string>
+                    </attribute>
+                   </widget>
+                   <widget class="QWidget" name="tab_soe_record">
+                    <attribute name="title">
+                     <string>SOE记录</string>
+                    </attribute>
+                   </widget>
+                   <widget class="QWidget" name="tab_yc_recod">
+                    <attribute name="title">
+                     <string>遥测变化记录</string>
+                    </attribute>
+                   </widget>
+                  </widget>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="tab_8">
+               <attribute name="title">
+                <string>Tab 2</string>
+               </attribute>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_3">
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QTabWidget" name="tabWidget_3">
+              <widget class="QWidget" name="tab_5">
+               <attribute name="title">
+                <string>Tab 1</string>
+               </attribute>
+              </widget>
+              <widget class="QWidget" name="tab_6">
+               <attribute name="title">
+                <string>Tab 2</string>
+               </attribute>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_4">
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QTabWidget" name="tabWidget_5">
+              <widget class="QWidget" name="tab_9">
+               <attribute name="title">
+                <string>Tab 1</string>
+               </attribute>
+              </widget>
+              <widget class="QWidget" name="tab_10">
+               <attribute name="title">
+                <string>Tab 2</string>
+               </attribute>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_5">
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QTabWidget" name="tabWidget">
+              <property name="currentIndex">
+               <number>1</number>
+              </property>
+              <widget class="QWidget" name="tab_11">
+               <attribute name="title">
+                <string>页</string>
+               </attribute>
+              </widget>
+              <widget class="QWidget" name="tab">
+               <attribute name="title">
+                <string>Tab 1</string>
+               </attribute>
+              </widget>
+              <widget class="QWidget" name="tab_2">
+               <attribute name="title">
+                <string>Tab 2</string>
+               </attribute>
+              </widget>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -131,8 +394,8 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>915</width>
-     <height>25</height>
+     <width>1184</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

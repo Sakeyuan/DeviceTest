@@ -8,22 +8,27 @@
 #include <QMap>
 #include <QIcon>
 #include <QStyleFactory>
+
 class TreeView : public QObject
 {
     Q_OBJECT
 public:
     explicit TreeView(QTreeView *view, QObject *parent = nullptr);
 
-    // 核心接口：添加节点，支持设置一个唯一 ID (Key) 方便查找
-    QStandardItem *addNode(const QString &text,
-                           const QString &key = QString(),
-                           QStandardItem *parent = nullptr,
-                           const QIcon &icon = QIcon());
-    // TreeView.h 中
-    // 重载 addNode，方便直接通过父节点的 key 添加子节点
-    QStandardItem *addNodeByKey(const QString &text, const QString &newKey,
-                                const QString &parentKey, const QIcon &icon = QIcon());
-    // 功能接口
+    QStandardItem *addNode(const QString &text, 
+                                    const QString &key,
+                                    int type, 
+                                    const QVariant &userData, 
+                                    QStandardItem *parent, 
+                                    const QIcon &icon);
+
+    QStandardItem *addNodeByKey(const QString &text, 
+                                      const QString &newKey,
+                                      const QString &parentKey, 
+                                      int type = -1,               
+                                      const QVariant &userData =  QVariant(), 
+                                      const QIcon &icon = QIcon());
+                                      
     void removeSelected();                            // 删除选中
     void recursiveCleanupMap(QStandardItem *item);    // 递归清理 KeyMap 中的节点
     void clear();                                     // 清空树
@@ -37,6 +42,8 @@ public:
     void setEditable(bool editable);
     void expandAll();
 
+
+
 signals:
     void contextMenuRequested(const QPoint &pos, const QString &key);
 
@@ -47,6 +54,12 @@ private:
     QTreeView *m_treeView;
     QStandardItemModel *m_model;
     QMap<QString, QStandardItem *> m_keyMap;
+
+    enum {
+        ROLE_KEY = Qt::UserRole + 1,
+        ROLE_TYPE = Qt::UserRole + 2,
+        ROLE_DATA = Qt::UserRole + 3 
+    };
 };
 
 #endif

@@ -1,0 +1,42 @@
+# ScdParse 模块 CMakeLists.txt
+
+# 源文件
+set(SCDPARSE_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/interface.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parse.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/strCode.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tinyxml/tinystr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tinyxml/tinyxml.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tinyxml/tinyxmlerror.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tinyxml/tinyxmlparser.cpp
+)
+
+# 头文件
+set(SCDPARSE_HEADERS
+    ${CMAKE_CURRENT_SOURCE_DIR}/interface.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/parse.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/tinyxml/tinyxml.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/tinyxml/tinystr.h
+)
+
+# 创建静态库
+add_library(ScdParse STATIC ${SCDPARSE_SOURCES} ${SCDPARSE_HEADERS})
+
+# 设置包含目录
+target_include_directories(ScdParse
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/tinyxml
+)
+
+# Windows 特定配置
+if(MSVC)
+    # 禁用不安全函数警告
+    target_compile_definitions(ScdParse PRIVATE _CRT_SECURE_NO_WARNINGS)
+    
+    # C++ 标准
+    target_compile_options(ScdParse PRIVATE /std:c++latest)
+endif()
+
+# 导出库供外部使用
+set(ScdParse_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR} PARENT_SCOPE)

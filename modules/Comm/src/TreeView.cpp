@@ -8,76 +8,96 @@ TreeView::TreeView(QTreeView *view, QObject *parent)
 
     m_model = new QStandardItemModel(m_treeView);
     m_treeView->setModel(m_model);
-
     m_treeView->setHeaderHidden(true);
     m_treeView->setAnimated(true);
     m_treeView->setSelectionMode(QAbstractItemView::SingleSelection);
     m_treeView->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_treeView->setContextMenuPolicy(Qt::CustomContextMenu);
-    m_treeView->setIndentation(5);
+    m_treeView->setIndentation(10); 
+    m_treeView->setRootIsDecorated(true);
 
-    m_treeView->setStyleSheet(R"(
-        QTreeView {
-            background-color: #2b2b2b;      /* 暗色背景 */
-            border: none;
-            outline: 0;
-            color: #dcdcdc;                 /* 文字颜色 */
-        }
-        QTreeView::item {
-            padding: 0px;                   /* 增加行高，不那么拥挤 */
-            border-radius: 2px;
-        }
-        QTreeView::item:hover {
-            background-color: #3e3e42;      /* 悬停效果 */
-        }
-        QTreeView::item:selected {
-            background-color: #094771;      /* 选中效果 */
-            color: white;
-        }
-        /* 展开/收起按钮美化 (可以使用标准图标或自定义图片) */
-        QTreeView::branch:has-children:!has-siblings:closed,
-        QTreeView::branch:closed:has-children:has-siblings {
-            image: url(:/icons/branch_closed.png); /* 替换为你的图标路径 */
-        }
-        QTreeView::branch:open:has-children:!has-siblings,
-        QTreeView::branch:open:has-children:has-siblings  {
-            image: url(:/icons/branch_open.png);
-        }
-    )");
+   m_treeView->setStyleSheet(R"(
+    /* 1. 整体背景：纯白背景配合深色文字 */
+    QTreeView {
+        background-color: #ffffff;
+        border: none;
+        outline: 0;
+        color: #333333;                /* 深灰色文字，比纯黑更柔和 */
+        font-family: "Segoe UI", "Microsoft YaHei";
+        font-size: 13px;
+    }
+
+    /* 2. 节点行：增加高度，去掉生硬的分割线 */
+    QTreeView::item {
+        padding: 0px 5px 5px 0px;             /* 适当的内边距 */
+        border: 1px solid transparent; /* 预留边框位置防止抖动 */
+    }
+
+    /* 3. 悬停与选中：使用柔和的浅蓝色 */
+    QTreeView::item:hover {
+        background-color: #f2f7ff;    /* 极浅蓝悬停 */
+        color: #000000;
+    }
+
+    QTreeView::item:selected {
+        background-color: #e5f0ff;    /* 浅蓝色选中 */
+        color: #0056b3;                /* 选中文字变蓝 */
+        font-weight: bold;             /* 选中字体加粗 */
+    }
+
+    QTreeView::item:selected:active {
+        background-color: #d1e5ff;    /* 激活状态稍深 */
+    }
+
+    QScrollBar:vertical {
+        background: #f1f1f1;
+        width: 8px;
+        margin: 0px;
+    }
+    QScrollBar::handle:vertical {
+        background: #cccccc;
+        min-height: 20px;
+        border-radius: 4px;
+    }
+    QScrollBar::handle:vertical:hover {
+        background: #bbbbbb;
+    }
+    QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+        height: 0px;
+    }
+)");
     setEditable(false);
     connect(m_treeView, &QTreeView::customContextMenuRequested,
             this, &TreeView::onCustomContextMenuRequested);
 }
 
-QStandardItem *TreeView::addNode(const QString &text, const QString &key, QStandardItem *parent, const QIcon &icon)
+QStandardItem *TreeView::addNode(const QString &text, const QString &key, int type, 
+                                 const QVariant &userData, QStandardItem *parent, const QIcon &icon)
 {
-    QStandardItem *item = new QStandardItem(text);
-    if (!icon.isNull())
-        item->setIcon(icon);
+    QStandardItem *item = new QStandardItem(icon, text);
+    item->setData(key, ROLE_KEY);
+    item->setData(type, ROLE_TYPE);
+    item->setData(userData, ROLE_DATA); 
 
-    // 存入 UserRole 并加入快速索引表
-    if (!key.isEmpty())
-    {
-        item->setData(key, Qt::UserRole + 1);
-        m_keyMap.insert(key, item);
-    }
+    if (parent) parent->appendRow(item);
+    else m_model->appendRow(item);
 
-    if (parent)
-    {
-        parent->appendRow(item);
-    }
-    else
-    {
-        m_model->appendRow(item);
-    }
+    if (!key.isEmpty()) m_keyMap[key] = item;
     return item;
 }
 
-QStandardItem *TreeView::addNodeByKey(const QString &text, const QString &newKey,
-                                      const QString &parentKey, const QIcon &icon)
+QStandardItem *TreeView::addNodeByKey(const QString &text, 
+                                      const QString &newKey,
+                                      const QString &parentKey, 
+                                      int type,               
+                                      const QVariant &userData, 
+                                      const QIcon &icon)
 {
     QStandardItem *parentItem = findNodeByKey(parentKey);
-    return addNode(text, newKey, parentItem, icon);
+    if (!parentKey.isEmpty() && !parentItem) {
+        qWarning() << "TreeView: 找不到父节点 Key =" << parentKey << "，节点将添加至根部。";
+    }
+    return addNode(text, newKey, type, userData, parentItem, icon);
 }
 
 QStandardItem *TreeView::findNodeByKey(const QString &key)

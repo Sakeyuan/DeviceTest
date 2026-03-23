@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ScdParse - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\leixi\AppData\Local\Temp\RSPE134.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "_WINDOWS" /D "_USRDLL" /D "SCDPARSE_EXPORTS" /D "WIN32" /D "NDEBUG" /D "_MBCS" /FR"Release/" /Fp"Release/ScdParse.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"G:\SVN\DevTest_C\DLL\ScdParse\parse.cpp"
+]
+Creating command line "cl.exe @C:\Users\leixi\AppData\Local\Temp\RSPE134.tmp" 
+Creating temporary file "C:\Users\leixi\AppData\Local\Temp\RSPE145.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:no /pdb:"Release/ScdParse.pdb" /machine:I386 /def:".\ScdParse.def" /out:"Release/ScdParse.dll" /implib:"Release/ScdParse.lib" 
+.\Release\interface.obj
+.\Release\parse.obj
+.\Release\strCode.obj
+.\Release\tinystr.obj
+.\Release\tinyxml.obj
+.\Release\tinyxmlerror.obj
+.\Release\tinyxmlparser.obj
+]
+Creating command line "link.exe @C:\Users\leixi\AppData\Local\Temp\RSPE145.tmp"
+<h3>Output Window</h3>
+Compiling...
+parse.cpp
+Linking...
+   Creating library Release/ScdParse.lib and object Release/ScdParse.exp
+Creating command line "bscmake.exe /nologo /o"Release/ScdParse.bsc"  .\Release\interface.sbr .\Release\parse.sbr .\Release\strCode.sbr .\Release\tinystr.sbr .\Release\tinyxml.sbr .\Release\tinyxmlerror.sbr .\Release\tinyxmlparser.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+ScdParse.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

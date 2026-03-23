@@ -18,6 +18,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 # 引入组件模块目录
 # ==========================================
 add_subdirectory(modules/Comm)
+add_subdirectory(modules/MmsClient)
+add_subdirectory(modules/ScdParse)
 
 # 主程序源文件
 set(PROJECT_SOURCES
@@ -25,19 +27,21 @@ set(PROJECT_SOURCES
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    Utils.h
+    Utils.cpp
 )
 
 # 创建可执行文件
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(DeviceTest MANUAL_FINALIZATION ${PROJECT_SOURCES})
+    qt_add_executable(DeviceTest MANUAL_FINALIZATION ${PROJECT_SOURCES}
+        resources.qrc)
 else()
     add_executable(DeviceTest ${PROJECT_SOURCES})
 endif()
 
-# ==========================================
-# 链接组件库 (核心步骤)
-# ==========================================
-target_link_libraries(DeviceTest PRIVATE 
+target_link_libraries(DeviceTest PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
-    Comm    # 此处链接我们在子目录定义的库
+    Comm        # 自动获得 modules/Comm/include 路径
+    MmsClient   # 自动获得 modules/MmsClient/inc 路径
+    ScdParse    # 自动获得 modules/ScdParse 路径
 )
