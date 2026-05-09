@@ -1,0 +1,27 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"modules/ScdParse/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "ScdParse_autogen_timestamp_deps::@f6262566a6e8d11c0cbc",
+	"isGeneratorProvided" : true,
+	"name" : "ScdParse_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "modules/ScdParse",
+		"source" : "modules/ScdParse"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

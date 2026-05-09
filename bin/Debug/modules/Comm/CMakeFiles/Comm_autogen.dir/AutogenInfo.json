@@ -1,0 +1,134 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/Comm_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm",
+	"CMAKE_EXECUTABLE" : "D:/Qt6/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : [ "C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/Comm_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "Comm_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/include/Comm/BaseTableModel.h",
+			"MU",
+			"3HUM7RISQ3/moc_BaseTableModel.cpp",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/include/Comm/TreeView.h",
+			"MU",
+			"3HUM7RISQ3/moc_TreeView.cpp",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/include/Comm/logmanager.h",
+			"MU",
+			"3HUM7RISQ3/moc_logmanager.cpp",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/include/Comm/qtlogredirect.h",
+			"MU",
+			"3HUM7RISQ3/moc_qtlogredirect.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/Comm_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/Comm_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"MINGW_HAS_SECURE_API=1",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_WIDGETS_LIB",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/include",
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/3rdparty/spdlog/include",
+		"D:/Qt6/6.8.3/mingw_64/include/QtWidgets",
+		"D:/Qt6/6.8.3/mingw_64/include",
+		"D:/Qt6/6.8.3/mingw_64/include/QtCore",
+		"D:/Qt6/6.8.3/mingw_64/mkspecs/win32-g++",
+		"D:/Qt6/6.8.3/mingw_64/include/QtGui",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"D:/Qt6/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/Qt6/Tools/mingw1310_64/bin/g++.exe",
+		"-std=gnu++20",
+		"-dM",
+		"-E",
+		"-c",
+		"D:/Qt6/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/Comm_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 12,
+	"PARSE_CACHE_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/CMakeFiles/Comm_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/Qt6/6.8.3/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/Qt6/6.8.3/mingw_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/CMakeFiles/Comm_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/src/TreeView.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/src/logmanager.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/Comm/src/qtlogredirect.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

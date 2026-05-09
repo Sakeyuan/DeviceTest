@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
 #include <QInputDialog>
@@ -6,6 +6,9 @@
 #include <QScreen>
 #include <QUuid>
 #include <QDebug>
+#include <QFileDialog>
+#include <QTableWidget>
+#include <QSortFilterProxyModel>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -13,7 +16,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     initializeComponent();
     setupTreeData();
-    connect(ui->deviceWidget, &QTableWidget::customContextMenuRequested,this, &MainWindow::onTableContextMenu);
 
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect screenGeometry = screen->geometry();
@@ -37,6 +39,8 @@ void MainWindow::initializeComponent()
 {
     ui->splitter->setStretchFactor(0, 2);
     ui->splitter->setStretchFactor(1, 9);
+
+    ui->deviceTableView->setContextMenuPolicy(Qt::CustomContextMenu);
 }
 
 void MainWindow::setupTreeData()
@@ -68,34 +72,34 @@ void MainWindow::onTreeContextMenu(const QPoint &pos, const QString &key)
 
     switch (type) {
         case NodeType::TestCategory: {
-            // 创建二级菜单
-            QMenu *subMenuNew = menu.addMenu(QIcon(":/icons/add.png"), "新建(N)"); 
-            addMenuAction(subMenuNew, "新建厂家设备分类(C)", TreeAction::AddChild, QIcon(":/icons/folder.h"));
+            // MENU
+            QMenu *subMenuNew = menu.addMenu(QIcon(":/icons/add.png"), "MENU(N)"); 
+            addMenuAction(subMenuNew, "新建(C)", TreeAction::AddChild, QIcon(":/icons/folder.h"));
             
             menu.addSeparator();
-            addMenuAction(&menu, "导入脚本(L)", TreeAction::ImportScd, QIcon(":/icons/import.png"));
+            addMenuAction(&menu, "MENU(L)", TreeAction::ImportScd, QIcon(":/icons/import.png"));
             break;
         }
 
         case NodeType::VendorDevice: 
-            addMenuAction(&menu, "新增测试集", TreeAction::AddChild);
-            addMenuAction(&menu, "删除分类", TreeAction::Delete, QIcon(":/icons/delete.png"));
+            addMenuAction(&menu, "新建测试集", TreeAction::AddChild);
+            addMenuAction(&menu, "Delete Category", TreeAction::Delete, QIcon(":/icons/delete.png"));
             break;
 
         case NodeType::TestItem: 
-            addMenuAction(&menu, "立即执行测试", TreeAction::RunTest, QIcon(":/icons/run.png"));
-            addMenuAction(&menu, "查看历史报告", TreeAction::ViewReport);
+            addMenuAction(&menu, "Run Test Now", TreeAction::RunTest, QIcon(":/icons/run.png"));
+            addMenuAction(&menu, "View History", TreeAction::ViewReport);
             menu.addSeparator();
-            addMenuAction(&menu, "删除测试项", TreeAction::Delete);
+            addMenuAction(&menu, "Delete Test Item", TreeAction::Delete);
             break;
 
         default: 
-            addMenuAction(&menu, "添加子项", TreeAction::AddChild);
-            addMenuAction(&menu, "删除", TreeAction::Delete);
+            addMenuAction(&menu, "Add Child Item", TreeAction::AddChild);
+            addMenuAction(&menu, "Delete", TreeAction::Delete);
             break;
     }
 
-    // 使用全局坐标弹出
+    // MENU
     QAction *selected = menu.exec(ui->treeView->viewport()->mapToGlobal(pos));
     
     if (selected) {
@@ -111,22 +115,6 @@ void MainWindow::onTreeItemClicked(const QModelIndex &index)
     ui->stackedWidget->setCurrentIndex(typeValue);
 }
 
-void MainWindow::onTableContextMenu(const QPoint &pos)
-{
-    QModelIndex index = ui->deviceWidget->indexAt(pos);
-    QMenu menu(this);
-    if (index.isValid()) {
-        QAction *importScdAct = menu.addAction("导入SCD");
-        connect(importScdAct, &QAction::triggered, this, &MainWindow::onImportScdRequested);
-
-    }
-    menu.exec(ui->deviceWidget->viewport()->mapToGlobal(pos));
-}
-
-void MainWindow::onImportScdRequested()
-{
-
-}
 
 QAction* MainWindow::addMenuAction(QMenu *parent, const QString &text, TreeAction actionType, const QIcon &icon) {
     QAction *act = parent->addAction(icon, text);
@@ -143,7 +131,7 @@ void MainWindow::handleTreeAction(TreeAction action, const QString &key) {
         int currentType = parentItem->data(Qt::UserRole + 2).toInt();
 
         if (currentType >= static_cast<int>(NodeType::TestItem)) {
-            qDebug() << "已达到最大层级，无法添加子节点";
+            qDebug() << "Maximum depth reached, cannot add child nodes";
             return;
         }
 
@@ -154,44 +142,44 @@ void MainWindow::handleTreeAction(TreeAction action, const QString &key) {
         QString title, label, defaultName;
         switch (childType) {
             case NodeType::VendorDevice: {
-                title = "新建厂家"; 
-                label = "厂家名称:";
-                defaultName = "新厂家分类";
+                title = "New Vendor"; 
+                label = "Vendor Name:";
+                defaultName = "New Vendor Category";
                 icon = QIcon(":/icons/VendorDevice.png"); 
                 break;
             }
             case NodeType::TestSet:{
-                title = "新建测试集"; 
-                label = "测试集名称:"; 
-                defaultName = "新终端测试集";
+                title = "New Test Set"; 
+                label = "Test Set Name:"; 
+                defaultName = "New Terminal Test Set";
                 icon = QIcon(":/icons/TestSet.png");
                 break;
             }   
             case NodeType::TestProject:{
-                title = "新建项目"; 
-                label = "项目名称:"; 
-                defaultName = "新测试项目"; 
+                title = "New Project"; 
+                label = "Project Name:"; 
+                defaultName = "New Test Project"; 
                 icon = QIcon(":/icons/TestProject.png");
                 break;
             }  
             case NodeType::TestGroup:{
-                title = "新建分组"; 
-                label = "分组名称:";
-                defaultName = "新测试组";
+                title = "New Group"; 
+                label = "Group Name:";
+                defaultName = "New Test Group";
                 icon = QIcon(":/icons/TestGroup.png");
                 break;
             }    
             case NodeType::TestItem:{
-                title = "新建测试项";
-                label = "项名称:"; 
-                defaultName = "新测试项"; 
+                title = "New Test Item";
+                label = "Item Name:"; 
+                defaultName = "New Test Item"; 
                 icon = QIcon(":/icons/TestItem.png");
                 break;
             }     
             default: {
-                title = "新建节点"; 
-                label = "名称:"; 
-                defaultName = "未命名"; 
+                title = "New Node"; 
+                label = "Name:"; 
+                defaultName = "Unnamed"; 
                 qApp->style()->standardIcon(QStyle::SP_CustomBase);
                 break;
             }                    
@@ -208,5 +196,51 @@ void MainWindow::handleTreeAction(TreeAction action, const QString &key) {
 
 void MainWindow::ImportScd()
 {
+    ALL_61850_INFO allInfo;
+    QString fileName = QFileDialog::getOpenFileName(this,tr("请选择scd文件"),"C:/",tr("scd文件(*.scd)"));
+    QByteArray fileNameData = fileName.toLocal8Bit();
+    getScd61850Info(&allInfo,fileNameData.data());
+    updateDeviceTable(allInfo.ied_list,allInfo.ied_num);
+}
 
+void MainWindow::updateDeviceTable(IED_LIST *iedList, int counts)
+{
+    // 1. 创建并配置原始 Model
+    auto *sourceModel = new BaseTableModel<IED_LIST>(this);
+    sourceModel->setConfig(iedList, counts, {
+                                                makeColumn<IED_LIST>("序号", &IED_LIST::id),
+                                                makeColumn<IED_LIST>("名称", &IED_LIST::name),
+                                                makeColumn<IED_LIST>("描述", &IED_LIST::desc),
+                                                makeColumn<IED_LIST>("类型", &IED_LIST::type),
+                                                makeColumn<IED_LIST>("版本号", &IED_LIST::configVersion),
+                                                makeColumn<IED_LIST>("制造商", &IED_LIST::manufacturer),
+                                                makeColumn<IED_LIST>("A网IP", &IED_LIST::strIPAddr1),
+                                                makeColumn<IED_LIST>("B网IP", &IED_LIST::strIPAddr2),
+                                            });
+
+    auto *proxyModel = new QSortFilterProxyModel(this);
+    proxyModel->setSourceModel(sourceModel);
+
+    proxyModel->setFilterKeyColumn(1); // 过滤第 1 列
+    proxyModel->setFilterRegularExpression("^(?!.*PRS7399).*$");
+
+    ui->deviceTableView->setModel(proxyModel);
+}
+
+
+void MainWindow::on_deviceTableView_customContextMenuRequested(const QPoint &pos)
+{
+    QModelIndex index = ui->deviceTableView->indexAt(pos);
+
+
+    QMenu menu(this);
+    // 直接在 addAction 时通过 lambda 或 槽函数处理，或者利用 exec() 的返回值
+    QAction *importScdAct = menu.addAction("导入SCD");
+
+    // 使用 exec() 阻塞获取点击的动作，这样就不需要在这里 connect 了
+    QAction *selectedAct = menu.exec(ui->deviceTableView->viewport()->mapToGlobal(pos));
+
+    if (selectedAct == importScdAct) {
+        ImportScd(); // 直接调用
+    }
 }

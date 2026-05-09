@@ -1,0 +1,32 @@
+{
+	"BUILD_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/DeviceTest_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest",
+	"CMAKE_SOURCE_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/DeviceTest_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/icons/TestItem.png",
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/icons/TestProject.png",
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/icons/database.png",
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/icons/TestGroup.png",
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/icons/task.png",
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/icons/TestSet.png",
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/icons/standard.png",
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/icons/VendorDevice.png"
+	],
+	"LOCK_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/CMakeFiles/DeviceTest_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "D:/Qt6/6.8.3/mingw_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/CMakeFiles/DeviceTest_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

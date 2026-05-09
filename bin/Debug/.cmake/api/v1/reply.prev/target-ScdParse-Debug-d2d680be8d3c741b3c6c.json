@@ -1,0 +1,199 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "modules/ScdParse/libScdParse.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"modules/ScdParse/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/3rdparty/pugixml/src"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/include"
+				},
+				{
+					"backtrace" : 0,
+					"isSystem" : true,
+					"path" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/ScdParse_autogen/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				6,
+				7
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "ScdParse_autogen_timestamp_deps::@f6262566a6e8d11c0cbc"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "ScdParse_autogen::@f6262566a6e8d11c0cbc"
+		}
+	],
+	"id" : "ScdParse::@f6262566a6e8d11c0cbc",
+	"name" : "ScdParse",
+	"nameOnDisk" : "libScdParse.a",
+	"paths" : 
+	{
+		"build" : "modules/ScdParse",
+		"source" : "modules/ScdParse"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				6,
+				7
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1,
+				3,
+				4,
+				5
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				8
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				9
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "bin/Debug/modules/ScdParse/ScdParse_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "modules/ScdParse/3rdparty/pugixml/src/pugiconfig.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "modules/ScdParse/3rdparty/pugixml/src/pugixml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "modules/ScdParse/3rdparty/pugixml/src/pugixml.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "modules/ScdParse/include/ScdParse/interface.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "modules/ScdParse/include/ScdParse/parse.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "modules/ScdParse/src/interface.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "modules/ScdParse/src/parse.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "bin/Debug/modules/ScdParse/ScdParse_autogen/timestamp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "bin/Debug/modules/ScdParse/ScdParse_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

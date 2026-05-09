@@ -95,7 +95,7 @@ QStandardItem *TreeView::addNodeByKey(const QString &text,
 {
     QStandardItem *parentItem = findNodeByKey(parentKey);
     if (!parentKey.isEmpty() && !parentItem) {
-        qWarning() << "TreeView: 找不到父节点 Key =" << parentKey << "，节点将添加至根部。";
+        qWarning() << "TreeView: Parent node not found. Key =" << parentKey;
     }
     return addNode(text, newKey, type, userData, parentItem, icon);
 }

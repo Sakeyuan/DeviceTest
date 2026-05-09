@@ -1,0 +1,7 @@
+set(__QT_DEPLOY_TARGET_Comm_FILE C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/libComm.a)
+set(__QT_DEPLOY_TARGET_Comm_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_ScdParse_FILE C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/libScdParse.a)
+set(__QT_DEPLOY_TARGET_ScdParse_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_DeviceTest_FILE C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/DeviceTest.exe)
+set(__QT_DEPLOY_TARGET_DeviceTest_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_DeviceTest_RUNTIME_DLLS D:/Qt6/6.8.3/mingw_64/bin/Qt6Widgets.dll;D:/Qt6/6.8.3/mingw_64/bin/Qt6Gui.dll;D:/Qt6/6.8.3/mingw_64/bin/Qt6Core.dll)

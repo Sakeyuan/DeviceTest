@@ -1,11 +1,16 @@
-add_library(Comm STATIC
-    src/TreeView.cpp
-    include/Comm/TreeView.h
+file(GLOB SRC_FILES
+    "src/*.cpp"
+    "include/Comm/*.h"
 )
 
-target_link_libraries(Comm PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+add_library(Comm STATIC ${SRC_FILES})
 
-# ==========================================
-# 关键设置：外界可以直接使用包含目录，无需繁琐路径
-# ==========================================
-target_include_directories(Comm PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
+target_include_directories(Comm PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/spdlog/include>
+)
+
+target_link_libraries(Comm PUBLIC
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Threads::Threads
+)

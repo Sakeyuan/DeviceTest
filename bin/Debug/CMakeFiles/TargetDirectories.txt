@@ -1,0 +1,15 @@
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/CMakeFiles/DeviceTest.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/CMakeFiles/edit_cache.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/CMakeFiles/DeviceTest_autogen_timestamp_deps.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/CMakeFiles/DeviceTest_autogen.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/CMakeFiles/Comm.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/CMakeFiles/edit_cache.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/CMakeFiles/rebuild_cache.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/CMakeFiles/Comm_autogen_timestamp_deps.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/Comm/CMakeFiles/Comm_autogen.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/CMakeFiles/ScdParse.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/CMakeFiles/edit_cache.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/CMakeFiles/rebuild_cache.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/CMakeFiles/ScdParse_autogen_timestamp_deps.dir
+C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/CMakeFiles/ScdParse_autogen.dir

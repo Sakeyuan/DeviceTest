@@ -1,0 +1,120 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/ScdParse_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse",
+	"CMAKE_EXECUTABLE" : "D:/Qt6/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/CMakeLists.txt"
+	],
+	"CMAKE_SOURCE_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/ScdParse_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "ScdParse_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/3rdparty/pugixml/src/pugiconfig.hpp",
+			"MU",
+			"QL6EDSF3VP/moc_pugiconfig.cpp",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/3rdparty/pugixml/src/pugixml.hpp",
+			"MU",
+			"QL6EDSF3VP/moc_pugixml.cpp",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/include/ScdParse/interface.h",
+			"MU",
+			"3BD2Y63OSZ/moc_interface.cpp",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/include/ScdParse/parse.h",
+			"MU",
+			"3BD2Y63OSZ/moc_parse.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/ScdParse_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/ScdParse_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/3rdparty/pugixml/src",
+		"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/include",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"D:/Qt6/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"D:/Qt6/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/Qt6/Tools/mingw1310_64/bin/g++.exe",
+		"-std=gnu++20",
+		"-dM",
+		"-E",
+		"-c",
+		"D:/Qt6/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/ScdParse_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 12,
+	"PARSE_CACHE_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/CMakeFiles/ScdParse_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/Qt6/6.8.3/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/Qt6/6.8.3/mingw_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "C:/Users/yuanjiafei/Desktop/DeviceTest/bin/Debug/modules/ScdParse/CMakeFiles/ScdParse_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/3rdparty/pugixml/src/pugixml.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/src/interface.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/yuanjiafei/Desktop/DeviceTest/modules/ScdParse/src/parse.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

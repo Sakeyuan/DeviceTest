@@ -150,10 +150,13 @@ background-color: rgb(255, 255, 255);</string>
                     <verstretch>1</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="contextMenuPolicy">
+                   <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
+                  </property>
                   <property name="orientation">
                    <enum>Qt::Orientation::Vertical</enum>
                   </property>
-                  <widget class="QTableWidget" name="deviceWidget">
+                  <widget class="QTableView" name="deviceTableView">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
@@ -163,101 +166,6 @@ background-color: rgb(255, 255, 255);</string>
                    <property name="contextMenuPolicy">
                     <enum>Qt::ContextMenuPolicy::CustomContextMenu</enum>
                    </property>
-                   <row>
-                    <property name="text">
-                     <string>新建行1</string>
-                    </property>
-                   </row>
-                   <row>
-                    <property name="text">
-                     <string>新建行2</string>
-                    </property>
-                   </row>
-                   <column>
-                    <property name="text">
-                     <string>编号</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>装置名称</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>连接状态</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>描述</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>A网IP</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>B网IP</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>电压额定值</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>电流额定值</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>功率额定值</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>电压变比</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>电流变比</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>功率变比</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>电压系数</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>电流系数</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>功率系数</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>最大电压</string>
-                    </property>
-                   </column>
-                   <column>
-                    <property name="text">
-                     <string>最大电流</string>
-                    </property>
-                   </column>
                   </widget>
                   <widget class="QTabWidget" name="tabWidget_signal">
                    <property name="sizePolicy">
